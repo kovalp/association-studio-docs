@@ -8,6 +8,6 @@ The package provides a GUI for a playful exploration of the association metrics
 used in multiple-object tracking.
 
 ## Contents
- - [README](readme)
+ - [README](copy-my-readme)
 
 
