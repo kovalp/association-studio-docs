@@ -1,0 +1,34 @@
+<style>
+
+.language-python .highlight {
+    background-color: #d7d7d7 !important; /* Light Grey */
+    border-radius: 6px;
+    color: #24292e; /* Dark Grey Text */
+}
+
+.language-bash .highlight,
+.language-sh .highlight,
+.language-shell .highlight,
+.language-console .highlight {
+    background-color: #afaf9f !important; /* VS Code Dark */
+    color: #101f1f; /* Light Grey/White Text */
+}
+
+</style>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>

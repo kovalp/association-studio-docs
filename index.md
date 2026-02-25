@@ -9,6 +9,6 @@ used in multiple-object tracking.
 
 ## Contents
  - [README](copy-my-readme)
- - [CHANGELOG]()
+ - [CHANGELOG](CHANGELOG.md)
 
 
