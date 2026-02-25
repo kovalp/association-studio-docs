@@ -1,4 +1,4 @@
-# 0.2.1
+# 0.2.4
 
  - Using `kinematic-tracker==19.3.0` -- the version which is not yanked.
 
