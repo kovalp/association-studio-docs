@@ -1,6 +1,13 @@
+# 0.3.0
+
+ - Several metrics are computed at the same time.
+ - Horizontal bar plot is produced for the metric values.
+ - The process covariance is effectively fixed to its measurement covariance.
+
 # 0.2.4
 
  - Using `kinematic-tracker==19.3.0` -- the version which is not yanked.
+
 
 # 0.2.0
 
