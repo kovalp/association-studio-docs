@@ -6,6 +6,7 @@ The user is able to move and rotate one of the boxes. The values of the currentl
 association metrics are calculated and represented instantly.
 
 <img src="assets/logo.png" width="192" alt="logo">
+<img src="assets/logo-vicomtech.svg" width="192" alt="logo">
 
 ## Usage 
 
