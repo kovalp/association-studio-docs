@@ -1,3 +1,8 @@
+# 0.4.0
+
+ - Move track (probe box) to the *O*rigin upon keystroke `O` (Shift + O).
+ - *R*otate the track by 30 degrees upon keystroke `R`  (Shift + R).
+
 # 0.3.0
 
  - Several metrics are computed at the same time.
@@ -7,7 +12,6 @@
 # 0.2.4
 
  - Using `kinematic-tracker==19.3.0` -- the version which is not yanked.
-
 
 # 0.2.0
 
