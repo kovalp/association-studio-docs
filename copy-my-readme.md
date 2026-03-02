@@ -16,7 +16,7 @@ There is a matplotlib-driven GUI
 association-studio
 ```
 
-<img src="assets/screenshot.png" width="641" alt="screenshot">
+<img src="assets/screenshot.png" width="957" alt="screenshot">
 
 Checkout the active keystrokes and mouse events in the brief usage description:
 
@@ -24,7 +24,7 @@ Checkout the active keystrokes and mouse events in the brief usage description:
 association-studio --help
 ```
 
-<img src="assets/help-usage.png" width="734" alt="usage">
+<img src="assets/help-usage.png" width="743" alt="usage">
 
 
 ## Install
