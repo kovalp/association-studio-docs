@@ -1,3 +1,8 @@
+# 0.5.0
+
+ - Simplify the dependencies (-nuScenes devkit, -pyquaternion & dependencies).
+ - Extend the range of Python versions: (>=3.10).
+
 # 0.4.0
 
  - Move track (probe box) to the *O*rigin upon keystroke `O` (Shift + O).
