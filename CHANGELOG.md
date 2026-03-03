@@ -1,3 +1,9 @@
+# 1.0.0
+
+ - Use kinematic-tracker==20.0.0 (featuring GIoU-yaw metric).
+ - Set of metrics are updated according to what available in kt-20.
+
+
 # 0.5.0
 
  - Simplify the dependencies (-nuScenes devkit, -pyquaternion & dependencies).
