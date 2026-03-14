@@ -1,3 +1,7 @@
+# 1.3.2
+
+ - Better description on PyPI. 
+
 # 1.3.0
 
  - Keystroke "1" resets the reference bounding box to unit size.

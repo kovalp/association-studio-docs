@@ -2,7 +2,7 @@
 
 Welcome to Association studio documentation.
 
-The latest version of `association-studio` is `1.3.0`.
+The latest version of `association-studio` is `1.3.2`.
 
 The package provides a GUI for a playful exploration of the association metrics
 used in multiple-object tracking.
