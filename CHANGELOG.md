@@ -1,3 +1,7 @@
+# 1.3.0
+
+ - Keystroke "1" resets the reference bounding box to unit size.
+
 # 1.2.0
 
  - Bug fixing the title initialization in GUI.
