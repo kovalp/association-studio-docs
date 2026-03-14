@@ -1,3 +1,10 @@
+# 1.2.0
+
+ - Bug fixing the title initialization in GUI.
+ - Reset both bounding boxes to unit boxes.
+ - Use kinematic-tracker==20.3.0 (vectorizing GIoU-yaw).
+ - Update other dependencies.
+
 # 1.0.1
 
  - Use kinematic-tracker==20.3.0 (vectorizing GIoU-yaw).
