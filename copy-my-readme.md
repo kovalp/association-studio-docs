@@ -8,6 +8,11 @@ association metrics are calculated and represented instantly.
 <img src="assets/logo.png" width="192" alt="logo">
 <img src="assets/logo-vicomtech.svg" width="192" alt="logo">
 
+Apart from the metrics available through kinematic tracker, we compute some experimental metrics
+
+  - IoU-line diagonal Mahalanobis
+
+
 ## Usage 
 
 There is a matplotlib-driven GUI

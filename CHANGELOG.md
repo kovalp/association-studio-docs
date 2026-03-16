@@ -1,3 +1,9 @@
+# 1.5.0
+
+  - Experimental association metric based on Mahalanobis distance with diagonal covariance.
+  - Bugfix the size format wlh means dx, dy, dz with zero rotation.
+  - Keystroke "2" results in 4x2 probe box.
+
 # 1.3.2
 
  - Better description on PyPI. 
