@@ -1,3 +1,9 @@
+# 1.6.0
+
+  - Calibrating the IoU-like-dia-Mah.
+  - Experimental metric using Slater exponent `exp(-d)`.
+  - Update dependencies.
+
 # 1.5.0
 
   - Experimental association metric based on Mahalanobis distance with diagonal covariance.

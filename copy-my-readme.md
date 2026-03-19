@@ -10,7 +10,8 @@ association metrics are calculated and represented instantly.
 
 Apart from the metrics available through kinematic tracker, we compute some experimental metrics
 
-  - IoU-line diagonal Mahalanobis
+  - IoU-like diagonal Mahalanobis (iou-like-dia-mah)
+  - IoU-like diagonal Slater (iou-like-dia-slater)
 
 
 ## Usage 
