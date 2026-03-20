@@ -1,3 +1,10 @@
+# 1.7.0
+
+  - Add IoU-like-two-yaw association metric.
+  - Make left labels on bar plot one-liners, except `mahalanobis-size-modulated`.
+  - Describe and fix the keystroke `2`.
+
+
 # 1.6.0
 
   - Calibrating the IoU-like-dia-Mah.

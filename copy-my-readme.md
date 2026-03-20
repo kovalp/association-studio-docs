@@ -12,6 +12,7 @@ Apart from the metrics available through kinematic tracker, we compute some expe
 
   - IoU-like diagonal Mahalanobis (iou-like-dia-mah)
   - IoU-like diagonal Slater (iou-like-dia-slater)
+  - IoU-like two-yaw Slater (iou-like-two-yaw)
 
 
 ## Usage 
