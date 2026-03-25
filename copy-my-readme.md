@@ -23,7 +23,7 @@ There is a matplotlib-driven GUI
 association-studio
 ```
 
-<img src="assets/screenshot.png" width="1111" alt="screenshot">
+<img src="assets/screenshot.png" width="1649" alt="screenshot">
 
 Checkout the active keystrokes and mouse events in the brief usage description:
 
@@ -31,7 +31,7 @@ Checkout the active keystrokes and mouse events in the brief usage description:
 association-studio --help
 ```
 
-<img src="assets/help-usage.png" width="737" alt="usage">
+<img src="assets/help-usage.png" width="914" alt="usage">
 
 
 ## Install

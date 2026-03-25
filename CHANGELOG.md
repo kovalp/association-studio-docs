@@ -1,3 +1,11 @@
+# Changelog
+
+# 1.8.0
+
+  - Add metrics selector.
+  - Limit the Python versions to >=3.11.
+
+
 # 1.7.0
 
   - Add IoU-like-two-yaw association metric.
