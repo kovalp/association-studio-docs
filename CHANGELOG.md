@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.9.0
+
+  - Redefine the IoU-like metric using arccos distance.
+
+
 # 1.8.0
 
   - Add metrics selector.
