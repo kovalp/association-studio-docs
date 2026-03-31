@@ -1,9 +1,12 @@
 # Changelog
 
+# 1.10.0
+
+  - Consume the IoU-like-two-yaw from the `kinematic-tracker==20.6.0`.
+
 # 1.9.0
 
   - Redefine the IoU-like metric using arccos distance.
-
 
 # 1.8.0
 

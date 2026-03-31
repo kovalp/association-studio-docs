@@ -12,7 +12,6 @@ Apart from the metrics available through kinematic tracker, we compute some expe
 
   - IoU-like diagonal Mahalanobis (iou-like-dia-mah)
   - IoU-like diagonal Slater (iou-like-dia-slater)
-  - IoU-like two-yaw Slater (iou-like-two-yaw)
 
 ## Usage 
 
@@ -22,7 +21,7 @@ There is a matplotlib-driven GUI
 association-studio
 ```
 
-<img src="assets/screenshot.png" width="1649" alt="screenshot">
+<img src="assets/screenshot.png" width="1667" alt="screenshot">
 
 Checkout the active keystrokes and mouse events in the brief usage description:
 
