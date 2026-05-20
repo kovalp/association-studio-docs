@@ -1,5 +1,9 @@
 # Changelog
 
+# 1.11.0
+
+  - Use `kinematic-tracker==21.0.0`.
+
 # 1.10.0
 
   - Consume the IoU-like-two-yaw from the `kinematic-tracker==20.6.0`.
