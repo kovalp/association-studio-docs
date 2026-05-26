@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.12.0
+
+  - Use `kinematic-tracker==22.0.0`.
+
+
 # 1.11.0
 
   - Use `kinematic-tracker==21.0.0`.
