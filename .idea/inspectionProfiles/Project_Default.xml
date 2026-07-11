@@ -1,0 +1,65 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="annotated-doc" />
+          <option value="annotated-types" />
+          <option value="anyio" />
+          <option value="audioop-lts" />
+          <option value="brotli" />
+          <option value="certifi" />
+          <option value="click" />
+          <option value="fastapi" />
+          <option value="filelock" />
+          <option value="fsspec" />
+          <option value="gradio" />
+          <option value="gradio-client" />
+          <option value="groovy" />
+          <option value="h11" />
+          <option value="hf-gradio" />
+          <option value="httpcore" />
+          <option value="httpx" />
+          <option value="huggingface-hub" />
+          <option value="idna" />
+          <option value="jinja2" />
+          <option value="markdown-it-py" />
+          <option value="markupsafe" />
+          <option value="mdurl" />
+          <option value="narwhals" />
+          <option value="numpy" />
+          <option value="orjson" />
+          <option value="packaging" />
+          <option value="pandas" />
+          <option value="pillow" />
+          <option value="plotly" />
+          <option value="pydantic" />
+          <option value="pydantic-core" />
+          <option value="pydub" />
+          <option value="pygments" />
+          <option value="python-dateutil" />
+          <option value="python-multipart" />
+          <option value="pytz" />
+          <option value="pyyaml" />
+          <option value="rich" />
+          <option value="safehttpx" />
+          <option value="semantic-version" />
+          <option value="shellingham" />
+          <option value="six" />
+          <option value="starlette" />
+          <option value="tomlkit" />
+          <option value="tqdm" />
+          <option value="typer" />
+          <option value="typing-extensions" />
+          <option value="typing-inspection" />
+          <option value="uvicorn" />
+          <option value="dash" />
+          <option value="dash-mantine-components" />
+          <option value="dash-iconify" />
+          <option value="gunicorn" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
