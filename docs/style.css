@@ -9,12 +9,19 @@ body {
     color: #333;
 }
 
-.main-container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 550px;
-    text-align: center;
+#stage {
+  width: 480px;
+  height: 320px;
+  position: relative;
+  border: 2px solid black;
+}
+
+canvas {
+  position: absolute;
+}
+#stage-ui {
+  z-index: 3;
+}
+#stage-bg {
+  z-index: 1;
 }
