@@ -1,4 +1,4 @@
-import {two_pi} from "./math_const.js";
+import {TWO_PI} from "./math_const.js";
 
 
 class BboxHelper {
@@ -6,6 +6,7 @@ class BboxHelper {
         this.xy_yaw_wh = new Float32Array(xy_yaw_wh);
         this.transform_scale = 20;
         this.moon_radius = 0.5;
+        this.edge_width = 0.35;
         this.transform = new DOMMatrix();
         this._upd_transform();
         this.half_sxy = new Float32Array([xy_yaw_wh[3] / 2, xy_yaw_wh[4] / 2]);
@@ -33,7 +34,7 @@ class BboxHelper {
 
     rotate(angle_rad) {
         this.xy_yaw_wh[2] += angle_rad;
-        this.xy_yaw_wh[2] = ((this.xy_yaw_wh[2] % two_pi) + two_pi) % two_pi;
+        this.xy_yaw_wh[2] = ((this.xy_yaw_wh[2] % TWO_PI) + TWO_PI) % TWO_PI;
         this._upd_transform();
     }
 
@@ -42,16 +43,32 @@ class BboxHelper {
         this.data_xy = this.inv_transform.transformPoint(this.offset_xy);
     }
 
+    is_in_h(){
+        return Math.abs(this.data_xy.x) < this.half_sxy[0]
+    }
+
+    is_in_v(){
+        return Math.abs(this.data_xy.y) < this.half_sxy[1]
+    }
+
     is_in_box() {
-        let xy = this.data_xy;
-        return (Math.abs(xy.x) < this.half_sxy[0]) && (Math.abs(xy.y) < this.half_sxy[1]);
+        return this.is_in_h() && this.is_in_v();
     }
 
     is_in_moon() {
-        let dx = this.data_xy.x - this.half_sxy[0];
-        let r = Math.sqrt(dx ** 2 + this.data_xy.y ** 2);
+        const dx = this.data_xy.x - this.half_sxy[0];
+        const r = Math.sqrt(dx ** 2 + this.data_xy.y ** 2);
         return r < this.moon_radius && dx > 0.;
     }
+
+    is_in_edge_x() {
+        return this.is_in_h() && Math.abs(this.data_xy.y + this.half_sxy[1]) < this.edge_width;
+    }
+
+    is_in_edge_y() {
+        return Math.abs(this.data_xy.x + this.half_sxy[0]) < this.edge_width && this.is_in_v();
+    }
+
 }
 
 export { BboxHelper };

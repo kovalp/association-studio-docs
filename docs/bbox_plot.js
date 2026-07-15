@@ -1,21 +1,34 @@
-import {two_pi, half_pi} from "./math_const.js";
+import {TWO_PI, HALF_PI} from "./math_const.js";
 
 
 class BboxPlot {
     constructor() {
-        this.fill_style = '#f00a';
-        this.stroke_style = '#0f0a';
+        this.box_style = '#f00a';
+        this.moon_style = '#0f0a';
+        this.moon_radius = 0.25;
+        this.moon_line_width = 0.5;
+        this.edge_style = 'gray';
+        this.edge_width = 0.1;
     }
 
     draw(ctx, bh) {
-        ctx.fillStyle = this.fill_style;
         ctx.setTransform(bh.transform);
-        ctx.fillRect(-bh.half_sxy[0], -bh.half_sxy[1], bh.xy_yaw_wh[3], bh.xy_yaw_wh[4]);
+
+        const { xy_yaw_wh: [,,, w, h], half_sxy: [hx, hy] } = bh;
+        const e = this.edge_width;
+
+        ctx.fillStyle = this.box_style;
+        ctx.fillRect(-hx, -hy, w, h);
+
+        ctx.fillStyle = this.edge_style;
+        ctx.fillRect(-hx + e, -hy - e, w - 2 * e, e);
+        ctx.fillRect(-hx - e, -hy + e, e, h - 2 * e);
+
         ctx.beginPath();
-        ctx.strokeStyle = this.stroke_style;
-        ctx.lineWidth = 0.5;
-        let r = 0.25
-        ctx.ellipse(bh.half_sxy[0], 0.0, r, r, 0, half_pi, two_pi - half_pi, true);
+        ctx.strokeStyle = this.moon_style;
+        ctx.lineWidth = this.moon_line_width;
+        let r = this.moon_radius;
+        ctx.ellipse(hx, 0.0, r, r, 0, HALF_PI, TWO_PI - HALF_PI, true);
         ctx.stroke();
     }
 }

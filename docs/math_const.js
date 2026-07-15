@@ -1,5 +1,5 @@
-const two_pi = 2 * Math.PI;
-const half_pi = Math.PI / 2;
+const TWO_PI = 2 * Math.PI;
+const HALF_PI = Math.PI / 2;
 
 
-export {two_pi, half_pi};
+export {TWO_PI, HALF_PI};

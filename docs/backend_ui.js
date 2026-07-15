@@ -16,6 +16,8 @@ class BackendUi {
         this.is_dragging = false;
         this.is_in_box = false;
         this.is_in_moon = false;
+        this.is_in_edge_x = false;
+        this.is_in_edge_y = false;
         this.start_event = new MouseEvent("", undefined);
         this.start_data_xy = new DOMPoint(0, 0);
         this.canvas.addEventListener('mousedown', this.mouse_down_callback.bind(this));
@@ -33,6 +35,11 @@ class BackendUi {
         box_helper.rotate(get_angle(this.start_data_xy, box_helper.data_xy));
     }
 
+    scale_h(box_helper, event){
+        box_helper.set_screen_offset(event.offsetX, event.offsetY);
+        box_helper.rotate(get_angle(this.start_data_xy, box_helper.data_xy));
+    }
+
     translate(box_helper, event){
         let dx = this.box.scale(event.offsetX - this.start_event.offsetX);
         let dy = this.box.scale(event.offsetY - this.start_event.offsetY);
@@ -44,13 +51,15 @@ class BackendUi {
             this.translate(box_helper, event);
         } else if (this.is_in_moon) {
             this.rotate(box_helper, event);
+        } else if (this.is_in_edge_x) {
+            console.log(box_helper.xy_yaw_wh[4])
         }
         this.draw_box(box_helper);
     }
 
     mouse_down_callback(event){
         this._upd_in_flags(event);
-        if (this.is_in_box || this.is_in_moon) {
+        if (this.is_in_box || this.is_in_moon || this.is_in_edge_x || this.is_in_edge_y) {
             this.is_dragging = true;
             this.start_event = event;
             this.start_data_xy = new DOMPoint(this.box.data_xy.x, this.box.data_xy.y);
@@ -62,7 +71,8 @@ class BackendUi {
             this.change_and_draw(new BboxHelper(this.box.xy_yaw_wh), event);
         } else {
             this._upd_in_flags(event);
-            event.target.style.cursor = get_cursor(this.is_in_box, this.is_in_moon);
+            let in_edge = this.is_in_edge_x || this.is_in_edge_y;
+            event.target.style.cursor = get_cursor(this.is_in_box, this.is_in_moon, in_edge);
         }
     }
 
@@ -77,6 +87,8 @@ class BackendUi {
         this.box.set_screen_offset(event.offsetX, event.offsetY);
         this.is_in_box = this.box.is_in_box();
         this.is_in_moon = this.box.is_in_moon();
+        this.is_in_edge_x = this.box.is_in_edge_x();
+        this.is_in_edge_y = this.box.is_in_edge_y();
     }
 }
 
