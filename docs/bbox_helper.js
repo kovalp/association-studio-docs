@@ -1,3 +1,6 @@
+import {two_pi} from "./math_const.js";
+
+
 class BboxHelper {
     constructor(xy_yaw_wh) {
         this.xy_yaw_wh = new Float32Array(xy_yaw_wh);
@@ -24,6 +27,17 @@ class BboxHelper {
         this.transform.scaleSelf(this.transform_scale, this.transform_scale);
         this.transform.translateSelf(this.xy_yaw_wh[0], this.xy_yaw_wh[1]);
         this.transform.rotateSelf(180 * this.xy_yaw_wh[2] / Math.PI);
+        this.inv_transform = this.transform.inverse();
+    }
+
+    rotate(angle_rad) {
+        this.xy_yaw_wh[2] += angle_rad;
+        this.xy_yaw_wh[2] = ((this.xy_yaw_wh[2] % two_pi) + two_pi) % two_pi;
+        this.transform.setMatrixValue('');
+        this.transform.scaleSelf(this.transform_scale, this.transform_scale);
+        this.transform.translateSelf(this.xy_yaw_wh[0], this.xy_yaw_wh[1]);
+        this.transform.rotateSelf(180 * this.xy_yaw_wh[2] / Math.PI);
+        this.transform.rotateFromVectorSelf()
         this.inv_transform = this.transform.inverse();
     }
 
