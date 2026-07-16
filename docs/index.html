@@ -8,9 +8,18 @@
 </head>
 <body>
 
-<div id="stage">
-    <canvas id="stage-ui" width="480" height="320"></canvas>
-    <canvas id="stage-bg" width="480" height="320"></canvas>
+<div id="app-container">
+    <div id="tool-panel">
+        <button id="reset-btn">Reset</button>
+        <input id="inp-len" type="number" value="3.0" min="0.3" max="20">
+        <input id="inp-wdt" type="number" value="1.5" min="0.3" max="5">
+        <span class="tool-label">Score: <span id="score-val">0</span></span>
+    </div>
+
+    <div id="stage">
+        <canvas id="stage-ui" width="480" height="320"></canvas>
+        <canvas id="stage-bg" width="480" height="320"></canvas>
+    </div>
 </div>
 
 <script type="module" src="main.js"></script>

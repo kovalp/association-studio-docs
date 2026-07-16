@@ -2,8 +2,8 @@ import {TWO_PI, HALF_PI} from "./math_const.js";
 
 
 class BboxPlot {
-    constructor() {
-        this.box_style = '#f00a';
+    constructor(box_style) {
+        this.box_style = box_style;
         this.moon_style = '#0f0a';
         this.moon_radius = 0.25;
         this.moon_line_width = 0.5;

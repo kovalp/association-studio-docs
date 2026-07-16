@@ -1,10 +1,13 @@
-import {BackendUi} from "./backend_ui.js";
+import {BoxBackendUi} from "./box_backend_ui.js";
 
-const canvas_bg = document.getElementById('stage-bg')
-const ctx_bg = canvas_bg.getContext("2d");
+const back_bg = new BoxBackendUi('stage-bg', '#00fa', [-0.2, 0.2, 0.0, 3.0, 1.5]);
+const back_ui = new BoxBackendUi('stage-ui', '#f0fa', [0.0, 0.0, 0.0, 3.0, 1.5]);
 
-ctx_bg.fillStyle = '#00fa';
-ctx_bg.transform(15, 0, 0, 15, 100, 100);
-ctx_bg.fillRect(0, 0, 4, 2);
+const reset_btn = document.getElementById("reset-btn");
+const inp_len = document.getElementById("inp-len");
 
-let back_ui = new BackendUi('stage-ui');
+function reset_probe_box() {
+    back_ui.set_state([0.0, 0.0, 0.0, 3.0, 1.5]);
+}
+
+reset_btn.addEventListener("click", reset_probe_box)

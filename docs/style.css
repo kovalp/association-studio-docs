@@ -1,12 +1,56 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #eee;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     height: 100vh;
     margin: 0;
     color: #333;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between tool panel and canvas */
+}
+
+/* Tool Panel Styling */
+#tool-panel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #bbb;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #444;
+    color: #fff;
+    width: 480px; /* Match your canvas width */
+}
+
+#tool-panel button {
+    background-color: #007acc;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#tool-panel button:hover {
+    background-color: #005999;
+}
+
+#tool-panel button:first-child {
+    margin-left: 10px; /* Adds space only to the left of the Reset button */
+}
+
+.tool-label {
+    padding: 10px;
+    margin-left: auto; /* Pushes the score to the far right */
+    font-size: 14px;
 }
 
 #stage {
@@ -20,7 +64,7 @@ canvas {
   position: absolute;
 }
 #stage-ui {
-  z-index: 3;
+  z-index: 2;
 }
 #stage-bg {
   z-index: 1;

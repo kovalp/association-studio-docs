@@ -5,13 +5,13 @@ import { get_cursor } from "./mouse_cursor.js";
 import { get_angle } from "./rotations.js";
 
 
-class BackendUi {
-    constructor(canvas_id) {
+class BoxBackendUi {
+    constructor(canvas_id, box_style, xy_yaw_wh) {
         this.canvas = document.getElementById(canvas_id);
         this.ctx = this.canvas.getContext("2d");
         this.screen = new Screen(this.canvas, this.ctx);
-        this.box_plt = new BboxPlot();
-        this.box = new BboxHelper([5.0, 6.0, 0.5, 3.0, 1.5]);
+        this.box_plt = new BboxPlot(box_style);
+        this.box = new BboxHelper(xy_yaw_wh);
         this.box_plt.draw(this.ctx, this.box);
         this.is_dragging = false;
         this.is_in_box = false;
@@ -25,36 +25,28 @@ class BackendUi {
         this.canvas.addEventListener('mouseup', this.mouse_up_callback.bind(this));
     }
 
-    draw_box(box_helper){
-        this.screen.clear();
-        this.box_plt.draw(this.ctx, box_helper);
-    }
+    change(box_helper, event){
+        if (this.is_in_box) {
+            const dx = this.box.scale(event.offsetX - this.start_event.offsetX);
+            const dy = this.box.scale(event.offsetY - this.start_event.offsetY);
+            box_helper.translate(dx, dy);
+            return
+        }
 
-    rotate(box_helper, event){
         box_helper.set_screen_offset(event.offsetX, event.offsetY);
-        box_helper.rotate(get_angle(this.start_data_xy, box_helper.data_xy));
-    }
-
-    scale_h(box_helper, event){
-        box_helper.set_screen_offset(event.offsetX, event.offsetY);
-        box_helper.rotate(get_angle(this.start_data_xy, box_helper.data_xy));
-    }
-
-    translate(box_helper, event){
-        let dx = this.box.scale(event.offsetX - this.start_event.offsetX);
-        let dy = this.box.scale(event.offsetY - this.start_event.offsetY);
-        box_helper.translate(dx, dy);
+        if (this.is_in_moon) {
+            box_helper.rotate(get_angle(this.start_data_xy, box_helper.data_xy));
+        } else if (this.is_in_edge_x) {
+            box_helper.scale_h(0.5 * this.start_data_xy.y - box_helper.data_xy.y);
+        } else if (this.is_in_edge_y) {
+            box_helper.scale_w(0.5 * this.start_data_xy.x - box_helper.data_xy.x);
+        }
     }
 
     change_and_draw(box_helper, event){
-        if (this.is_in_box) {
-            this.translate(box_helper, event);
-        } else if (this.is_in_moon) {
-            this.rotate(box_helper, event);
-        } else if (this.is_in_edge_x) {
-            console.log(box_helper.xy_yaw_wh[4])
-        }
-        this.draw_box(box_helper);
+        this.change(box_helper, event);
+        this.screen.clear();
+        this.box_plt.draw(this.ctx, box_helper);
     }
 
     mouse_down_callback(event){
@@ -71,7 +63,7 @@ class BackendUi {
             this.change_and_draw(new BboxHelper(this.box.xy_yaw_wh), event);
         } else {
             this._upd_in_flags(event);
-            let in_edge = this.is_in_edge_x || this.is_in_edge_y;
+            const in_edge = this.is_in_edge_x || this.is_in_edge_y;
             event.target.style.cursor = get_cursor(this.is_in_box, this.is_in_moon, in_edge);
         }
     }
@@ -90,6 +82,12 @@ class BackendUi {
         this.is_in_edge_x = this.box.is_in_edge_x();
         this.is_in_edge_y = this.box.is_in_edge_y();
     }
+
+    set_state(xy_yaw_wh){
+        this.box.set_state(xy_yaw_wh);
+        this.screen.clear();
+        this.box_plt.draw(this.ctx, this.box);
+    }
 }
 
-export {BackendUi}
+export {BoxBackendUi}
