@@ -14,7 +14,7 @@ class BboxPlot {
     draw(ctx, bh) {
         ctx.setTransform(bh.transform);
 
-        const { xy_yaw_wh: [,,, w, h], half_sxy: [hx, hy] } = bh;
+        const { xy_yaw_lw: [,,, w, h], half_sxy: [hx, hy] } = bh;
         const e = this.edge_width;
 
         ctx.fillStyle = this.box_style;

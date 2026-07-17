@@ -9,11 +9,16 @@
 <body>
 
 <div id="app-container">
-    <div id="tool-panel">
+    <div class="tool-panel">
         <button id="reset-btn">Reset</button>
-        <input id="inp-len" type="number" value="3.0" min="0.3" max="20">
-        <input id="inp-wdt" type="number" value="1.5" min="0.3" max="5">
         <span class="tool-label">Score: <span id="score-val">0</span></span>
+    </div>
+    <div class="tool-panel">
+        <input id="inp-x" type="number" value="0.0" min="-12.0" max="12" step="0.5">
+        <input id="inp-y" type="number" value="0.0" min="-10.0" max="10" step="0.5">
+        <input id="inp-yaw" type="number" value="0.0" min="0.0" max="360.0" step="15">
+        <input id="inp-len" type="number" value="3.0" min="0.2" max="15" step="0.5">
+        <input id="inp-wdt" type="number" value="1.5" min="0.2" max="5" step="0.5">
     </div>
 
     <div id="stage">

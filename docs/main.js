@@ -1,13 +1,16 @@
 import {BoxBackendUi} from "./box_backend_ui.js";
+import {TopPanel} from "./top_panel.js";
 
-const back_bg = new BoxBackendUi('stage-bg', '#00fa', [-0.2, 0.2, 0.0, 3.0, 1.5]);
-const back_ui = new BoxBackendUi('stage-ui', '#f0fa', [0.0, 0.0, 0.0, 3.0, 1.5]);
+const back_bg = new BoxBackendUi('stage-bg', '#00fa', [0, 0, 0, 3, 1.5]);
+const back_ui = new BoxBackendUi('stage-ui', '#f0fa', [0, 0, 0, 3, 1.5]);
+const top_panel = new TopPanel();
+back_ui.set_change_state_callback(top_panel.set_state.bind(top_panel));
 
-const reset_btn = document.getElementById("reset-btn");
-const inp_len = document.getElementById("inp-len");
+top_panel.inp_x.addEventListener("change", back_ui.change_x.bind(back_ui));
+top_panel.inp_y.addEventListener("change", back_ui.change_y.bind(back_ui));
+top_panel.inp_yaw.addEventListener("change", back_ui.change_yaw.bind(back_ui));
+top_panel.inp_len.addEventListener("change", back_ui.change_len.bind(back_ui));
+top_panel.inp_wdt.addEventListener("change", back_ui.change_wdt.bind(back_ui));
 
-function reset_probe_box() {
-    back_ui.set_state([0.0, 0.0, 0.0, 3.0, 1.5]);
-}
 
-reset_btn.addEventListener("click", reset_probe_box)
+top_panel.reset_btn.addEventListener("click", () => {back_ui.set_state([0.0, 0.0, 0.0, 3.0, 1.5]);})

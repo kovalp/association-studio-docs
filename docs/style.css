@@ -17,7 +17,7 @@ body {
 }
 
 /* Tool Panel Styling */
-#tool-panel {
+.tool-panel {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -29,7 +29,7 @@ body {
     width: 480px; /* Match your canvas width */
 }
 
-#tool-panel button {
+.tool-panel button {
     background-color: #007acc;
     color: white;
     padding: 10px;
@@ -39,17 +39,17 @@ body {
     transition: background 0.2s;
 }
 
-#tool-panel button:hover {
+.tool-panel button:hover {
     background-color: #005999;
 }
 
-#tool-panel button:first-child {
-    margin-left: 10px; /* Adds space only to the left of the Reset button */
+.tool-panel input:first-child, .tool-panel button:first-child{
+    margin-left: 10px; /* Adds space only to the left of the first child button or input */
 }
 
 .tool-label {
     padding: 10px;
-    margin-left: auto; /* Pushes the score to the far right */
+    margin-left: auto;
     font-size: 14px;
 }
 
