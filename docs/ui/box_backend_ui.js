@@ -2,7 +2,7 @@ import {BboxHelper} from "./bbox_helper.js";
 import {BboxPlot} from "./bbox_plot.js";
 import {Screen} from "./screen.js";
 import { get_cursor } from "./mouse_cursor.js";
-import { get_angle } from "./rotations.js";
+import { get_angle } from "../rotations.js";
 
 
 class BoxBackendUi {

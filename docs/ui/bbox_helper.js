@@ -1,4 +1,4 @@
-import {TWO_PI} from "./math_const.js";
+import {TWO_PI} from "../math_const.js";
 
 
 class BboxHelper {
